@@ -1,4 +1,6 @@
 import { expect, it } from "vitest";
+import { number } from "zod";
+import { array, string } from "zod/lib";
 
 interface User {
   id: number;
@@ -18,7 +20,18 @@ interface Post {
  * returns a user?
  */
 const makeUser = () => {
-  return {};
+  return {
+    id: 1,
+    firstName: "Eslam",
+    lastName: "Abdallah",
+    role: "admin",
+    posts: [
+      {
+        id: 1,
+        title: "this is title"
+      }
+    ]
+  };
 };
 
 it("Should return a valid user", () => {
